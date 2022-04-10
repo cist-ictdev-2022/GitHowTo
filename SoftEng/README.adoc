@@ -92,16 +92,16 @@ https://github.com/cist-ictdev-2022/linebot  にアクセスします。
 
 image::./img/fig10.png[title=linebot-main.z
 
-=== 2-5. 変更した se22-xxxxxx フォルダの提出
+=== 2-5. 課題用のプロジェクトの移動
 
-2-3 で作成された `se22-xxxxxx` フォルダの中に、 2-4 で *展開したlinebot-mainプロジェクトをフォルダごと* 移動してください。
+2-3 で作成された `se22-xxxxxx` フォルダの中に、 2-4 で *展開したlinebot-mainプロジェクトをフォルダごと* 移動（追加）してください。
 
 image::./img/fig09.png[title=git cloneで作成したフォルダの中に、課題のフォルダを移動]
 
 
 === 2-6. 変更した se22-xxxxxx フォルダの提出
 
-2-4 で追加した課題のプロジェクトを、Classroom に提出します。
+2-5 で、linebot-main を追加した `se22-xxxxxx` フォルダを、Classroom に提出します。
 
 git clone したフォルダで、次のコマンドを実行してください。
 
