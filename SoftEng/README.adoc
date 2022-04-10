@@ -90,7 +90,7 @@ https://github.com/cist-ictdev-2022/linebot  にアクセスします。
 
 `code` ボタンを押し、今度は、`Download ZIP` をクリックします。
 
-image::./img/fig10.png[title=linebot-main.z
+image::./img/fig10.png[title=linebot-main.zip をダウンロード]
 
 === 2-5. 課題用のプロジェクトの移動
 
