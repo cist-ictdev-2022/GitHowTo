@@ -1,5 +1,3 @@
-:toc:
-
 = ソフトウェア工学概論
 
 ソフトウェア工学概論で Classroom に課題を提出する方法です。
@@ -64,7 +62,7 @@ image::./img/fig07.png[title=ブラウザでのアクセス]
 
 === 2-2. git cloneの準備
 
-`code` ボタンを押し、clone用のURLをコピーします。
+`code` ボタンを押し、**clone用のURLをコピー** します。(URLの横のボタンを押すと簡単にコピーできます)
 
 image::./img/fig08.png[title=URLのコピー]
 
@@ -82,14 +80,24 @@ git clone https://github.com/cist-ictdev-2022/se22-xxxxxx.git    #<1>
 cloneすると、 `se22-xxxxxx` （xxxxxxの部分は各自異なる）というフォルダができる予定です。
 
 
-=== 2-4. 課題で作成したプロジェクトの追加
+=== 2-4. 課題用のプロジェクトのダウンロードと展開
 
-2-3 で作成された `se22-xxxxxx` フォルダの中に、 *授業の課題で作成したlinebotプロジェクトをフォルダごと* 移動してください。
+課題用のプロジェクトは、Githubの別の場所で公開をしています。
+
+https://github.com/cist-ictdev-2022/linebot  にアクセスします。
+
+`code` ボタンを押し、今度は、`Download ZIP` をクリックします。
+
+image::./img/fig10.png[title=linebot-main.z
+
+=== 2-5. 変更した se22-xxxxxx フォルダの提出
+
+2-3 で作成された `se22-xxxxxx` フォルダの中に、 2-4 で *展開したlinebot-mainプロジェクトをフォルダごと* 移動してください。
 
 image::./img/fig09.png[title=git cloneで作成したフォルダの中に、課題のフォルダを移動]
 
 
-=== 2-5. 課題で作成したプロジェクトの提出
+=== 2-6. 変更した se22-xxxxxx フォルダの提出
 
 2-4 で追加した課題のプロジェクトを、Classroom に提出します。
 
@@ -110,7 +118,7 @@ git commit -m "第1回の課題提出"
 git push
 ----
 
-=== 2-6. 提出されているかの確認
+=== 2-7. 提出されているかの確認
 
 `2-1.ブラウザで開く` をもう一度行い、課題のフォルダが提出（push）されていることを確認する。
 
@@ -126,7 +134,7 @@ git push
 
 今後の課題では、皆さんのプログラムの変更内容が Classroom の方に反映される様にしてもらいます。
 
-*プログラムを変更するときは、 `se22-xxxxxx` フォルダに移動したフォルダを intelliJ IDEAで開いて* 、変更を行なってください。
+*プログラムを変更するときは、 `se22-xxxxxx` フォルダの中の `linebot-main` フォルダを intelliJ IDEAで開いて* 、変更を行なってください。
 
 また、プログラムを変更したら、 `3. 提出物の更新` の手順で、どんどん変更内容を Classroom に変更内容をPushしてください。
 
