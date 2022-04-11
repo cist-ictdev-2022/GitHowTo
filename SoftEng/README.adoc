@@ -1,6 +1,6 @@
 :toc:
 
-= ソフトウェア工学概論での Github Classroom の使い方
+= ソフトウェア工学概論での Github Classroom の使い方と練習
 
 ソフトウェア工学概論で Github Classroom に課題を提出する方法です。
 
@@ -16,6 +16,8 @@
 課題のプロジェクトを開いた状態で手順を進めると、プロジェクトが壊れることがあります。
 
 image::./img/fig01.png[title=プロジェクトを閉じる] 
+
+'''
 
 == 1. Classroom（課題提出場所）の準備
 
@@ -53,6 +55,7 @@ image::./img/fig05.png[title=作成中の画面]
 
 image::./img/fig06.png[title=作成完了後の画面]
 
+'''
 
 == 2. 課題提出場所（リポジトリ）への課題提出（初回）
 
@@ -94,9 +97,19 @@ image::./img/fig10.png[title=linebot-main.zip をダウンロード]
 
 === 2-5. 課題用のプロジェクトの移動
 
-2-3 で作成された `se22-xxxxxx` フォルダの中に、 2-4 で *展開したlinebot-mainプロジェクトをフォルダごと* 移動（追加）してください。
+2-4 でダウンロードした linebot-main.zip をダブルクリックします。
+
+**中身の linebot-main フォルダを、2-3 で作成された `se22-xxxxxx` フォルダの中に移動（追加）** してください。
 
 image::./img/fig09.png[title=git cloneで作成したフォルダの中に、課題のフォルダを移動]
+
+==== ❗ 注意事項❗
+
+やり方によっては、フォルダの階層が `se22-xxxxxx` > `linebot-main` > `linebot-main` > `src, その他ファイル...` のように、`linebot-main` フォルダが2階層に重複してしまうことがあります。
+
+*このような、重複状態にならないように注意* してください。
+
+`se22-xxxxxx` > `linebot-main` > `src, その他ファイル...` のように、 *`se22-xxxxxx` フォルダ の下には一階層だけ、 `linebot-main` フォルダがある* ようにしてください。
 
 === 2-6. 変更した se22-xxxxxx フォルダの提出
 
@@ -111,7 +124,7 @@ git add .
 
 [source, sh]
 ----
-git commit -m "第1回の課題提出"
+git commit -m "プロジェクトの準備まで進めた"
 ----
 
 [source, sh]
@@ -123,15 +136,16 @@ git push
 
 `2-1.ブラウザで開く` をもう一度行い、課題のフォルダが提出（push）されていることを確認する。
 
-
 ==== ポイント
 
 あなたがpushしたClassroom上のリポジトリは、自動的に private 設定になるようにしてあります。
 
 あなたの他は、教員/TAからのみ確認できる仕組みになっています。
 
+'''
 
-== 3. 今後の課題の取り組み方
+
+== 3. プロジェクトの初期化を兼ねた今後の課題の取り組み方の練習
 
 今後の課題では、皆さんのプログラムの変更内容が Classroom の方に反映される様にしてもらいます。
 
@@ -141,6 +155,94 @@ git push
 
 プログラムで質問がある場合も、教員やTAは Classroom からソースコードの状況が確認できますので、pushの上で質問をしてください。
 
+実際に、課題の準備（プロジェクトの初期化）を兼ねた練習をしてみましょう。
+
+=== 3-1. IntelliJ に読み込む
+
+`se22-xxxxxx` フォルダの中の `linebot-main` フォルダを intelliJ IDEAで開いてください。  +（信頼して開きますか？というダイアログが出た場合は `プロジェクトを信頼` を選んでください）
+
+右下の「linebotの依存関係を解決中」などのプログレスバーが全て完了するまで待ってください（少し時間がかかります）。
+
+=== 3-2. プロジェクトの初期設定（Java 17 のインストール）
+
+今回のプロジェクトは、 昨年11月にリリースされた Java 17 で動作するようになっています。
+
+皆さんのIntelliJ IDEAにも、Java 17 をインストールする必要があります。（もし既にJava 17を利用している人は、プロジェクトのSDKを17にしてください）
+
+==== 3-3. Java 17 をインストール
+
+. ファイルメニューから `ファイル` > `プロジェクト構造` を選択してください。
+. プロジェクト構造ダイアログの中で、`プラットフォーム設定` の `SDK` を選んでください。
+. `+` ボタンを押して、`JDKのダウンロード` を押してください。
+. JDKのダウンロードダイアログの中で、`バージョン` を `17` に切り替え、`ダウンロード` を選んでください。
+. ダウンロードが完了したら、名前欄に `openjdk-17` が表示されていることを確認し `適用` ボタンを押してください。
+
+==== 3-4. Java 17 を利用するように設定
+
+. プロジェクト構造ダイアログの中で、`プロジェクト設定` の `プロジェクト` を選んでください。
+. `SDK` の欄を `openjdk-17` にして、 `適用` ボタンを押してください。
+. プロジェクト構造ダイアログの中で、`プロジェクト設定` の `モジュール` を選んでください。
+. `言語レベル` の欄を `17 - sealed型...` にして、 `適用` ボタンを押してください。
+. `OK`ボタンを押して閉じます。
+
+==== 3-5. プログラムを作成し、動作するかを確認
+
+ソース・パッケージ（src/main/java）のcom.example.linebotパッケージの中にPushクラスを作る。
+
+[source, java]
+----
+package com.example.linebot;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+
+@RestController
+public class Push {
+
+  // テスト
+  @GetMapping("test")
+  public String hello(HttpServletRequest request) {
+    return "Get from " + request.getRequestURL();
+  }
+
+}
+----
+
+LinebotApplication を右クリックで起動する。
+
+ブラウザから、[http://localhost:8080/test](http://localhost:8080/test) にアクセスする。以下の様に表示されれば成功。
+
+```
+Get from http://localhost:8080/test
+```
+
+==== 3-6. プログラムの変更を commit / push する
+
+git bash（Windows） や ターミナル（mac OS）を開き、動作確認ができる部分まで変更できたことを、Classroomにgitで記録・提出してください。
+
+
+[source, sh]
+----
+git add .
+----
+
+[source, sh]
+----
+git commit -m "動作確認ができるところまで進めた"
+----
+
+[source, sh]
+----
+git push
+----
+
+=== 3-7. 提出されているかの確認
+
+`2-1.ブラウザで開く` をもう一度行い、課題のフォルダの中に、追加された Push.java のプログラムがあることを確認する。
+
+'''
 
 == 4. 提出物の更新（今後の授業でも、毎回）
 
